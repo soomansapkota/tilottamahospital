@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, Search } from 'lucide-react';
+import { Phone, Mail, Search, Calendar, CheckCircle } from 'lucide-react';
 
 interface Doctor {
   id: number;

@@ -12,7 +12,8 @@ import {
   Pill, 
   FlaskConical, 
   CheckCircle,
-  Calendar
+  Calendar,
+  Phone
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
