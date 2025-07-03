@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import tillottmaImage from '../../assets/images/logo.png'; 
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,11 +48,9 @@ const Header: React.FC = () => {
           <Link to="/" className="text-2xl font-bold text-primary-600 flex items-center">
             <span className="mr-2 text-primary-600">
               {/* Hospital Logo */}
-              <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-              </svg>
+              {/* <img src={tillottmaImage} className="h-8 w-8" alt="Tilottama Hospital Logo" /> */}
             </span>
-            Tilottama
+           तिलोत्तमा हस्पिटल प्रा.लि.
           </Link>
         </div>
         
@@ -73,11 +72,11 @@ const Header: React.FC = () => {
             </Link>
           ))}
           <a
-            href="tel:+11234567890"
+            href="tel:+9779857025855"
             className="btn btn-primary btn-sm flex items-center"
           >
             <Phone size={16} className="mr-2" />
-            Emergency: 123-456-7890
+            Emergency: +977 9857025855
           </a>
         </nav>
         
@@ -114,11 +113,11 @@ const Header: React.FC = () => {
               </Link>
             ))}
             <a
-              href="tel:+11234567890"
+              href="tel:+9779857025855"
               className="block mt-4 btn btn-primary w-full flex items-center justify-center"
             >
               <Phone size={18} className="mr-2" />
-              Emergency: 123-456-7890
+              Emergency: +977 9857025855
             </a>
           </div>
         </div>

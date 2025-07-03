@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { 
   Heart, 
   Stethoscope, 
-  UserPlus, 
-  Calendar, 
   CheckCircle,
   Clock, 
   ArrowRight,
-  Phone 
+  Phone, 
+  Ear,
+  Bone,
+  Baby,
+  
 } from 'lucide-react';
 import HeroSection from '../components/home/HeroSection';
 import FeatureCard from '../components/home/FeatureCard';
@@ -16,6 +18,11 @@ import TestimonialCard from '../components/home/TestimonialCard';
 import StatCard from '../components/home/StatCard';
 import DepartmentCard from '../components/home/DepartmentCard';
 import DoctorCard from '../components/home/DoctorCard';
+import KrishnaImage from '../assets/images/krishna.png';
+import SantoshImage from '../assets/images/santosh-pokhrel.png';
+import KishorImage from '../assets/images/kishor1.png';
+import DoctorTeamImage from '../assets/images/doctorteam1.png';
+
 
 const HomePage: React.FC = () => {
   const features = [
@@ -37,71 +44,89 @@ const HomePage: React.FC = () => {
   ];
   
   const departments = [
+  
     {
-      icon: <svg className="h-12 w-12 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>,
-      title: 'Cardiology',
-      description: 'Comprehensive care for heart conditions with advanced diagnostic and treatment options.',
-    },
-    {
-      icon: <svg className="h-12 w-12 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12h1"></path><path d="M6 12h1"></path><path d="M10 12h11"></path><path d="M3 21h18"></path><path d="M19 16v5"></path><path d="M14 16v5"></path><path d="M9 16v5"></path><path d="M4 16v5"></path><path d="M4 7v5"></path><path d="M9 7v5"></path><path d="M14 7v5"></path><path d="M19 7v5"></path><path d="M3 3h18"></path></svg>,
-      title: 'Neurology',
-      description: 'Specialized care for disorders of the nervous system, brain, and spinal cord.',
-    },
-    {
-      icon: <svg className="h-12 w-12 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m16 2 7 7-7 7"></path><path d="M9 16h7"></path><path d="M17 16a5 5 0 1 1-10 0c0-2.76 2.5-5 5-3 2.5-2 5 .24 5 3Z"></path></svg>,
+      icon: <Bone className="h-12 w-12 text-primary-500" />,
       title: 'Orthopedics',
       description: 'Treatment for bone and joint issues, from sports injuries to complex surgeries.',
     },
     {
-      icon: <svg className="h-12 w-12 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20a9 9 0 0 1-9-9"></path><path d="M11 10a1 1 0 0 1 0-2"></path><path d="M13 4.562C17.282 4.997 21 9.3 21 14c0 1.806-.887 2.966-2.146 2.966s-1.912-1.123-1.327-3.06c.585-1.938-.933-3.439-2.993-2.997-2.06.44-2.672-.346-2.147-2.765C12.91-3.827 6.207 3.502 11 4.562Z"></path></svg>,
+      icon: <Baby className="h-12 w-12 text-primary-500" />,
       title: 'Pediatrics',
       description: 'Dedicated care for infants, children, and adolescents in a child-friendly environment.',
     },
-  ];
-  
+      {
+ icon: (
+    <svg 
+      className="h-12 w-12 text-primary-500" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2"
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      {/* Circle (female symbol) */}
+      <circle cx="12" cy="6" r="5" />
+      
+      {/* Plus sign */}
+      <line x1="12" y1="11" x2="12" y2="20" /> {/* Vertical line */}
+      <line x1="8" y1="16" x2="16" y2="16" /> {/* Horizontal line */}
+    </svg>
+  ),
+      title: 'Gynaecology',
+      description: 'Specialized care for women\'s health, including reproductive health and prenatal care.',
+    },
+    {
+  icon: <Ear className="h-12 w-12 text-primary-500" />,
+  title: 'Ear, Nose & Throat',
+  description: 'Comprehensive care for conditions affecting the ear, nose, and throat, including hearing loss and sinus issues.',
+}
+];
+
   const doctors = [
     {
-      image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. Sarah Johnson',
-      specialty: 'Cardiology',
-      description: 'Board-certified cardiologist with over 15 years of experience in treating heart conditions.',
-    },
-    {
-      image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. Michael Chen',
-      specialty: 'Neurology',
-      description: 'Specialized in diagnosing and treating disorders of the nervous system and brain.',
-    },
-    {
-      image: 'https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. Emily Rodriguez',
+      image: SantoshImage,
+      name: 'Dr. Santosh Pokhrel',
       specialty: 'Pediatrics',
       description: 'Passionate about providing comprehensive healthcare for children of all ages.',
+    },
+    {
+      image: KrishnaImage,
+      name: 'Dr. Krishna Kharel',
+      specialty: 'Orthopedics',
+      description: 'Dr. Kharel is an orthopedic surgeon specializing in joint replacement and minimally invasive surgical techniques. He has helped countless patients regain mobility and improve their quality of life.',
+    },
+    {
+      image: KishorImage,
+      name: 'Dr. Kishor Khatri',
+      specialty: 'Orthopedics',
+      description: 'Dr. Kishor Khatri helps people with bone and joint problems feel better and move easily again.',
     },
   ];
   
   const testimonials = [
     {
-      content: "The care I received at HealthPlus was exceptional. The doctors were attentive, and the staff was incredibly supportive throughout my recovery.",
-      name: "James Wilson",
+      content: "म आभारी छु! तपाईंको धैर्य, राम्रो सल्लाह र देखभालले स्वास्थ्य सुधारियो।",
+      name: "Ram Bahadur Chetri",
       role: "Patient"
     },
     {
-      content: "I was impressed by how quickly I was able to get an appointment and the quality of care I received. The facilities are state-of-the-art.",
-      name: "Sarah Thompson",
+      content: "आभारी छु! डाक्टरले प्रशस्त समय दिएर उत्कृष्ट सल्लाह र उपचार गर्नुभयो।",
+      name: "Hari Prasad Sharma",
       role: "Patient"
     },
     {
-      content: "The pediatric department made my son feel comfortable during a stressful time. We're grateful for their expertise and compassion.",
-      name: "Michael Davis",
+      content: "बाल रोग विभागले मेरो छोरालाई तनावपूर्ण समयमा सहज महसुस गरायो। हामी उनीहरूको विशेषज्ञता र सहानुभूतिका लागि आभारी छौं।",
+      name: "Sita Devi Gurung",
       role: "Parent"
     },
   ];
   
   const stats = [
-    { value: "50+", label: "Specialist Doctors" },
+    { value: "10+", label: "Specialist Doctors" },
     { value: "25k+", label: "Satisfied Patients" },
-    { value: "15+", label: "Years of Experience" },
+    { value: "13+", label: "Years of Experience" },
     { value: "12", label: "Medical Departments" }
   ];
 
@@ -132,15 +157,15 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <img 
-                src="https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                src={DoctorTeamImage} 
                 alt="Modern hospital facility" 
                 className="rounded-lg shadow-medium object-cover h-full w-full"
               />
             </div>
             <div className="animate-slide-up">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Excellence in Healthcare Since 1995</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Excellence in Healthcare Since 2012</h2>
               <p className="text-gray-700 mb-6">
-                For over 25 years, HealthPlus Hospital has been at the forefront of medical excellence, providing compassionate care and cutting-edge treatments to our community. Our mission is to improve the health and wellbeing of the individuals and communities we serve.
+                For over 13 years, Tilottama Hospital has been at the forefront of medical excellence, providing compassionate care and cutting-edge treatments to our community. Our mission is to improve the health and wellbeing of the individuals and communities we serve.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -240,7 +265,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
       
-      {/* Appointment Section */}
+      {/* Appointment Section
       <section className="py-16 bg-secondary-50">
         <div className="container-custom">
           <div className="bg-white rounded-xl shadow-medium p-8 lg:p-12">
@@ -412,7 +437,7 @@ const HomePage: React.FC = () => {
             </Link>
             <a href="tel:+11234567890" className="btn bg-accent-500 text-white hover:bg-accent-600">
               <Phone size={18} className="mr-2" />
-              Call Now: (123) 456-7890
+              Call Now: +977 9857025855
             </a>
           </div>
         </div>

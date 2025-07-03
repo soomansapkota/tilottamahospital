@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Search, Calendar, CheckCircle } from 'lucide-react';
+import KrishnaImage from '../assets/images/krishna.png';
+import SantoshImage from '../assets/images/santosh-pokhrel.png';
+import KishorImage from '../assets/images/kishor1.png';
 
 interface Doctor {
   id: number;
@@ -19,80 +22,44 @@ const DoctorsPage: React.FC = () => {
 
   const specialties = [
     'All Specialties',
-    'Cardiology',
     'Neurology',
     'Orthopedics',
     'Pediatrics',
-    'Ophthalmology',
-    'Dermatology',
   ];
 
   const doctors: Doctor[] = [
     {
       id: 1,
-      image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. Sarah Johnson',
-      specialty: 'Cardiology',
-      education: 'MD, Harvard Medical School',
-      experience: '15+ years',
-      description: 'Dr. Johnson is a board-certified cardiologist specializing in interventional cardiology and heart failure management. She has performed over 1,000 cardiac procedures and is committed to providing personalized care for patients with heart conditions.',
-      languages: ['English', 'Spanish'],
-      availability: ['Mon, Wed, Fri: 9AM - 5PM']
-    },
-    {
-      id: 2,
-      image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. Michael Chen',
-      specialty: 'Neurology',
-      education: 'MD, Johns Hopkins University',
-      experience: '12+ years',
-      description: 'Dr. Chen specializes in the diagnosis and treatment of neurological disorders, with particular expertise in stroke treatment, epilepsy, and movement disorders. He is dedicated to advancing neurological care through research and clinical practice.',
-      languages: ['English', 'Mandarin'],
-      availability: ['Tues, Thurs: 8AM - 4PM', 'Sat: 9AM - 1PM']
-    },
-    {
-      id: 3,
-      image: 'https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. James Wilson',
+      image: KrishnaImage,
+      name: 'Dr. Krishna Kharel',
       specialty: 'Orthopedics',
-      education: 'MD, Yale School of Medicine',
+      education: 'MD',
       experience: '18+ years',
-      description: 'Dr. Wilson is an orthopedic surgeon specializing in joint replacement, sports medicine, and minimally invasive surgical techniques. He has helped countless patients regain mobility and improve their quality of life.',
-      languages: ['English'],
+      description: 'Dr. Kharel is an orthopedic surgeon specializing in joint and minimally invasive surgical techniques. He has helped countless patients regain mobility and improve their quality of life.',
+      languages: ['English', 'Nepali', 'Hindi'],
       availability: ['Mon, Wed, Fri: 8AM - 4PM']
     },
     {
-      id: 4,
-      image: 'https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. Emily Rodriguez',
+      id: 2,
+      image: SantoshImage,
+      name: 'Dr. Santosh Pokhrel',
       specialty: 'Pediatrics',
-      education: 'MD, Stanford University',
+      education: 'MD',
       experience: '10+ years',
-      description: 'Dr. Rodriguez is a board-certified pediatrician dedicated to providing comprehensive healthcare for children from infancy through adolescence. She focuses on preventive care, developmental milestones, and childhood illnesses.',
-      languages: ['English', 'Spanish'],
+      description: 'Dr. Pokhrel is a board-certified pediatrician dedicated to providing comprehensive healthcare for children from infancy through adolescence. She focuses on preventive care, developmental milestones, and childhood illnesses.',
+      languages: ['English', 'Nepali'],
       availability: ['Mon-Fri: 9AM - 5PM']
     },
     {
-      id: 5,
-      image: 'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. David Thompson',
-      specialty: 'Ophthalmology',
-      education: 'MD, Duke University',
-      experience: '14+ years',
-      description: 'Dr. Thompson specializes in comprehensive eye care, including cataract surgery, glaucoma treatment, and LASIK vision correction. He is committed to helping patients achieve optimal eye health and clear vision.',
-      languages: ['English'],
-      availability: ['Tues, Thurs: 9AM - 6PM', 'Sat: 9AM - 2PM']
-    },
-    {
-      id: 6,
-      image: 'https://images.pexels.com/photos/5327616/pexels-photo-5327616.jpeg?auto=compress&cs=tinysrgb&w=600',
-      name: 'Dr. Lisa Brown',
-      specialty: 'Dermatology',
-      education: 'MD, University of Pennsylvania',
-      experience: '11+ years',
-      description: 'Dr. Brown is a board-certified dermatologist specializing in medical, surgical, and cosmetic dermatology. She provides comprehensive care for skin conditions, skin cancer screenings, and aesthetic procedures.',
-      languages: ['English', 'French'],
-      availability: ['Mon, Wed, Fri: 8:30AM - 4:30PM']
+      id: 3,
+      image: KishorImage,
+      name: 'Dr. Kishor Khatri',
+      specialty: 'Orthopedics',
+      education: 'MD',
+      experience: '18+ years',
+      description: 'Dr. Khantri is an orthopedic surgeon specializing in joint replacement, sports medicine, and minimally invasive surgical techniques. He has helped countless patients regain mobility and improve their quality of life.',
+      languages: ['English', 'Nepali', 'Hindi'],
+      availability: ['Mon, Wed, Fri: 8AM - 4PM']
     }
   ];
 
@@ -221,7 +188,7 @@ const DoctorsPage: React.FC = () => {
                         </ul>
                       </div>
                       
-                      <div className="flex flex-col sm:flex-row gap-3">
+                      {/* <div className="flex flex-col sm:flex-row gap-3">
                         <a
                           href={`/contact?doctor=${encodeURIComponent(doctor.name)}`}
                           className="btn btn-primary btn-sm"
@@ -236,7 +203,7 @@ const DoctorsPage: React.FC = () => {
                           <Phone size={16} className="mr-2" />
                           Call
                         </a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -268,7 +235,7 @@ const DoctorsPage: React.FC = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4">Join Our Medical Team</h2>
                 <p className="text-gray-700 mb-6">
-                  HealthPlus Hospital is always looking for talented and passionate healthcare professionals to join our team. We offer a supportive work environment, opportunities for professional growth, and a chance to make a real difference in our patients' lives.
+                  Tilottama Hospital is always looking for talented and passionate healthcare professionals to join our team. We offer a supportive work environment, opportunities for professional growth, and a chance to make a real difference in our patients' lives.
                 </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">

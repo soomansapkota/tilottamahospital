@@ -18,12 +18,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">HealthPlus Hospital</h3>
+            <h3 className="text-xl font-extrabold mb-4 text-white">Tilottama Hospital</h3>
             <p className="text-gray-300 mb-4">
               Providing exceptional healthcare services with a dedicated team of specialists and 
               state-of-the-art facilities for all your medical needs.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">
                 <Facebook size={20} />
                 <span className="sr-only">Facebook</span>
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                 <Linkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
               </a>
-            </div>
+            </div> */}
           </div>
           
           {/* Quick Links */}
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
                 <Link to="/services">Emergency Care</Link>
               </li>
               <li className="text-gray-300 hover:text-white transition-colors">
-                <Link to="/services">Cardiology</Link>
+                <Link to="/services">Ear, Nose & Throat</Link>
               </li>
               <li className="text-gray-300 hover:text-white transition-colors">
                 <Link to="/services">Neurology</Link>
@@ -104,26 +104,26 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <MapPin className="mt-1 mr-3 text-primary-400 flex-shrink-0" size={18} />
                 <span className="text-gray-300">
-                  123 Hospital Street, Medical Center, Cityville, 12345
+                  Hospital Line, Butwal
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-3 text-primary-400 flex-shrink-0" size={18} />
                 <a href="tel:+11234567890" className="text-gray-300 hover:text-white transition-colors">
-                  (123) 456-7890
+                  +977 9857025855
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 text-primary-400 flex-shrink-0" size={18} />
-                <a href="mailto:info@healthplus.com" className="text-gray-300 hover:text-white transition-colors">
-                  info@healthplus.com
+                <a href="mailto:info@tilottamahospital.com" className="text-gray-300 hover:text-white transition-colors">
+                  info@tilottamahospital.com
                 </a>
               </li>
               <li className="flex items-start">
                 <Clock className="mt-1 mr-3 text-primary-400 flex-shrink-0" size={18} />
                 <div className="text-gray-300">
-                  <p>Mon-Fri: 8:00 AM - 8:00 PM</p>
-                  <p>Sat-Sun: 9:00 AM - 6:00 PM</p>
+                  <p>Opens 24/7</p>
+                  <p>Everyday</p>
                   <p className="font-semibold">Emergency: 24/7</p>
                 </div>
               </li>
@@ -134,8 +134,11 @@ const Footer: React.FC = () => {
         <hr className="border-gray-700 my-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} HealthPlus Hospital. All rights reserved.
+          <p className="text-gray-400/90 text-sm mb-4 md:mb-0">
+           &copy; {new Date().getFullYear()}{' '}
+          <span className="text-white font-bold hover:text-primary-300 transition-colors">
+          Tilottama Hospital
+          </span>. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">

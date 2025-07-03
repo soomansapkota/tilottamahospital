@@ -24,39 +24,61 @@ const ContactPage: React.FC = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validate form
-    if (!formData.name || !formData.email || !formData.message) {
-      setFormStatus({
-        submitted: true,
-        success: false,
-        message: 'Please fill in all required fields.'
-      });
-      return;
-    }
-    
-    // In a real application, you would send this data to your backend
-    // This is a simulation of a successful form submission
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+
+  if (!formData.name || !formData.email || !formData.message) {
     setFormStatus({
       submitted: true,
-      success: true,
-      message: 'Thank you for your message. Our team will get back to you shortly!'
+      success: false,
+      message: 'Please fill in all required fields.'
     });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
-    
-    // In a real application, this is where you would make an API call
-    console.log('Form submitted:', formData);
-  };
+    return;
+  }
+
+  // try {
+  //   const response = await fetch("https://localhost:5000/send-email", {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(formData),
+  //   });
+
+  //   const result = await response.json();
+
+  //   if (response.ok) {
+  //     setFormStatus({
+  //       submitted: true,
+  //       success: true,
+  //       message: result.message || 'Message sent successfully!',
+  //     });
+
+  //     setFormData({
+  //       name: '',
+  //       email: '',
+  //       phone: '',
+  //       subject: '',
+  //       message: ''
+  //     });
+  //   } else {
+  //     setFormStatus({
+  //       submitted: true,
+  //       success: false,
+  //       message: result.message || 'Failed to send message.',
+  //     });
+  //   }
+  // } catch (error) {
+  //   console.error('Error:', error);
+  //   setFormStatus({
+  //     submitted: true,
+  //     success: false,
+  //     message: 'An error occurred. Please try again later.',
+  //   });
+  // }
+};
+
   
   return (
     <div className="pt-24">
@@ -84,8 +106,8 @@ const ContactPage: React.FC = () => {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Our Location</h3>
                       <p className="text-gray-600">
-                        123 Hospital Street, Medical Center<br />
-                        Cityville, 12345
+                        Hospital Line, Butwal<br />
+                        Rupandehi, Nepal
                       </p>
                     </div>
                   </div>
@@ -95,8 +117,8 @@ const ContactPage: React.FC = () => {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Phone Numbers</h3>
                       <p className="text-gray-600">
-                        Reception: (123) 456-7890<br />
-                        Emergency: (123) 456-7999
+                        Reception: (+977) 9857025855<br />
+                        Emergency: (+977) 9857025855<br />
                       </p>
                     </div>
                   </div>
@@ -106,8 +128,8 @@ const ContactPage: React.FC = () => {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
                       <p className="text-gray-600">
-                        info@healthplus.com<br />
-                        appointments@healthplus.com
+                        info@tilottamahospital.com<br />
+                        
                       </p>
                     </div>
                   </div>
@@ -117,9 +139,9 @@ const ContactPage: React.FC = () => {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Working Hours</h3>
                       <p className="text-gray-600">
-                        Monday-Friday: 8:00 AM - 8:00 PM<br />
-                        Saturday-Sunday: 9:00 AM - 6:00 PM<br />
-                        <span className="font-semibold">Emergency: 24/7</span>
+                       Everyday<br />
+                       24/7 Service<br />
+                       <span className="font-semibold">Emergency: 24/7</span>
                       </p>
                     </div>
                   </div>
@@ -187,7 +209,7 @@ const ContactPage: React.FC = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="(123) 456-7890"
+                        placeholder="+9779876543210"
                         className="input"
                       />
                     </div>
@@ -242,7 +264,7 @@ const ContactPage: React.FC = () => {
         <div className="container-custom">
           <div className="bg-white rounded-lg shadow-soft overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059353029!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sca!4v1619826183326!5m2!1sen!2sca"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.8536931785334!2d83.46292117525343!3d27.697331676188274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996868a612c8b4d%3A0xdc566d0fcffa258!2sTilottama%20Hospital%20Pvt.%20Ltd.!5e1!3m2!1sen!2snp!4v1751282329994!5m2!1sen!2snp"
               width="100%"
               height="450"
               style={{ border: 0 }}
@@ -254,56 +276,7 @@ const ContactPage: React.FC = () => {
         </div>
       </section>
       
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Find answers to common questions about our hospital, services, and appointment process.
-            </p>
-          </div>
-          
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-soft">
-                <h3 className="text-lg font-semibold mb-2">How do I schedule an appointment?</h3>
-                <p className="text-gray-600">
-                  You can schedule an appointment by calling our main number at (123) 456-7890, using our online appointment form, or visiting our reception desk during business hours.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-soft">
-                <h3 className="text-lg font-semibold mb-2">What insurance plans do you accept?</h3>
-                <p className="text-gray-600">
-                  We accept most major insurance plans. Please contact our billing department at (123) 456-7890 to verify if your specific insurance is accepted.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-soft">
-                <h3 className="text-lg font-semibold mb-2">Do I need a referral to see a specialist?</h3>
-                <p className="text-gray-600">
-                  Some specialists may require a referral from your primary care physician, while others accept direct appointments. Please contact our appointment desk for specific requirements.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-soft">
-                <h3 className="text-lg font-semibold mb-2">What should I bring to my first appointment?</h3>
-                <p className="text-gray-600">
-                  Please bring your photo ID, insurance card, list of current medications, medical history, and any relevant medical records or test results from previous providers.
-                </p>
-              </div>
-            </div>
-            
-            <div className="text-center mt-8">
-              <div className="inline-flex items-center text-primary-600">
-                <MessageSquare size={20} className="mr-2" />
-                <span>Have more questions? Contact our support team at support@healthplus.com</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };

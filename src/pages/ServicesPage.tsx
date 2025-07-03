@@ -1,121 +1,127 @@
 import React from 'react';
 import { 
-  Heart, 
-  Brain, 
   Bone, 
   Baby, 
-  Eye, 
   Stethoscope, 
-  Activity,
   Microscope, 
   Syringe, 
   Pill, 
   FlaskConical, 
   CheckCircle,
-  Calendar,
-  Phone
+  Phone,
+  Ear,
+  HeartPulse,
+  MonitorPlay,
+  X,
+  Ambulance,
+  Scissors,
+  Droplet
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServicesPage: React.FC = () => {
   const services = [
     {
-      icon: <Heart className="h-12 w-12 text-primary-500" />,
-      title: 'Cardiology',
-      description: 'Comprehensive diagnostic and treatment services for heart conditions, including advanced cardiac imaging, interventional procedures, and cardiac rehabilitation programs.',
+      icon: <Ear className="h-12 w-12 text-primary-500" />,
+      title: 'Ear, Nose and Throat',
+      description: 'Specialized care for ENT disorders with advanced diagnostic and treatment options for all ear, nose, and throat conditions.',
       features: [
-        'Advanced Cardiac Imaging',
-        'Interventional Cardiology',
-        'Heart Failure Management',
-        'Electrophysiology Studies'
-      ]
-    },
-    {
-      icon: <Brain className="h-12 w-12 text-primary-500" />,
-      title: 'Neurology',
-      description: 'Specialized care for disorders of the brain, spine, and nervous system with cutting-edge diagnostic capabilities and treatment options for complex neurological conditions.',
-      features: [
-        'Stroke Treatment Center',
-        'Epilepsy Monitoring',
-        'Neurosurgery',
-        'Multiple Sclerosis Care'
+        'Hearing Tests',
+        'Sinus Treatment',
+        'Tonsillectomy',
+        'Voice Disorder Management'
       ]
     },
     {
       icon: <Bone className="h-12 w-12 text-primary-500" />,
-      title: 'Orthopedics',
-      description: 'Expert care for musculoskeletal issues, from sports injuries to joint replacements, with minimally invasive surgical techniques and comprehensive rehabilitation services.',
+      title: 'Orthopedic and Neurology',
+      description: 'Comprehensive care for musculoskeletal and nervous system disorders with advanced surgical and non-surgical treatment options.',
       features: [
-        'Joint Replacement Surgery',
-        'Sports Medicine',
-        'Spine Surgery',
-        'Physical Therapy'
-      ]
-    },
-    {
-      icon: <Baby className="h-12 w-12 text-primary-500" />,
-      title: 'Pediatrics',
-      description: 'Comprehensive healthcare for infants, children, and adolescents in a child-friendly environment with specialized pediatric subspecialties for all developmental stages.',
-      features: [
-        'Well-Child Visits',
-        'Pediatric Immunizations',
-        'Developmental Assessments',
-        'Pediatric Subspecialties'
-      ]
-    },
-    {
-      icon: <Eye className="h-12 w-12 text-primary-500" />,
-      title: 'Ophthalmology',
-      description: 'Complete eye care services from routine vision exams to advanced surgical procedures, including treatment for cataracts, glaucoma, and retinal disorders.',
-      features: [
-        'Cataract Surgery',
-        'LASIK Vision Correction',
-        'Glaucoma Treatment',
-        'Retinal Disorder Management'
+        'Joint Replacement',
+        'Spinal Surgery',
+        'Stroke Management',
+        'Nerve Disorder Treatment'
       ]
     },
     {
       icon: <Stethoscope className="h-12 w-12 text-primary-500" />,
-      title: 'Primary Care',
-      description: 'Comprehensive primary healthcare services for patients of all ages, focusing on preventive care, chronic disease management, and health maintenance.',
+      title: 'General Physician',
+      description: 'Primary healthcare services for diagnosis, treatment, and prevention of various adult health conditions.',
       features: [
-        'Annual Check-ups',
+        'Health Check-ups',
         'Chronic Disease Management',
-        'Preventive Screenings',
-        'Health Education'
+        'Preventive Care',
+        'Vaccinations'
       ]
     },
     {
-      icon: <Activity className="h-12 w-12 text-primary-500" />,
-      title: 'Emergency Care',
-      description: '24/7 emergency services with rapid response times, advanced life-saving equipment, and a skilled emergency medicine team ready to handle any medical crisis.',
+      icon: <Baby className="h-12 w-12 text-primary-500" />,
+      title: 'Pediatrics and Infant Care',
+      description: 'Specialized healthcare services for children from birth through adolescence in a child-friendly environment.',
       features: [
-        '24/7 Emergency Services',
-        'Trauma Center',
-        'Rapid Response Team',
-        'Critical Care Unit'
+        'Well-baby Checkups',
+        'Childhood Vaccinations',
+        'Growth Monitoring',
+        'Pediatric Emergencies'
+      ]
+    },
+    {
+      icon: <Syringe className="h-12 w-12 text-primary-500" />,
+      title: 'Anesthesiology',
+      description: 'Professional anesthesia services for surgical procedures and pain management with the highest safety standards.',
+      features: [
+        'Surgical Anesthesia',
+        'Pain Management',
+        'Critical Care',
+        'Regional Anesthesia'
+      ]
+    },
+    {
+      icon: <Scissors className="h-12 w-12 text-primary-500" />,
+      title: 'General and Laparoscopic Surgery',
+      description: 'Advanced surgical solutions including minimally invasive laparoscopic procedures for various conditions.',
+      features: [
+        'Appendectomy',
+        'Gallbladder Surgery',
+        'Hernia Repair',
+        'Minimally Invasive Procedures'
+      ]
+    },
+    {
+      icon: <Droplet className="h-12 w-12 text-primary-500" />,
+      title: 'Urology',
+      description: 'Specialized care for urinary tract and male reproductive system disorders with advanced treatment options.',
+      features: [
+        'Kidney Stone Treatment',
+        'Prostate Care',
+        'Urinary Incontinence',
+        'Urologic Surgery'
       ]
     },
     {
       icon: <Microscope className="h-12 w-12 text-primary-500" />,
-      title: 'Laboratory Services',
-      description: 'State-of-the-art diagnostic laboratory offering a comprehensive range of testing services with quick and accurate results for informed medical decisions.',
+      title: 'Gynecology and Obstetrics',
+      description: 'Comprehensive women\'s health services including prenatal care, delivery, and gynecological treatments.',
       features: [
-        'Blood Tests',
-        'Pathology Services',
-        'Genetic Testing',
-        'Microbiology'
+        'Prenatal Care',
+        'Delivery Services',
+        'Pap Smears',
+        'Menopause Management'
       ]
     }
   ];
   
-  const additionalServices = [
-    { icon: <Syringe size={20} />, name: 'Immunization Services' },
-    { icon: <Pill size={20} />, name: 'Pharmacy Services' },
-    { icon: <FlaskConical size={20} />, name: 'Radiology & Imaging' },
-    { icon: <Activity size={20} />, name: 'Rehabilitation Services' },
+  const diagnosticServices = [
+    { icon: <X className="h-12 w-12 text-primary-500" />, name: 'Digital X-Ray' },
+    { icon: <HeartPulse className="h-12 w-12 text-primary-500" />, name: 'E.C.G.' },
+    { icon: <MonitorPlay className="h-12 w-12 text-primary-500" />, name: 'Video X-ray' },
   ];
 
+  const additionalServices = [
+    { icon: <Pill size={20} />, name: 'Pharmacy' },
+    { icon: <FlaskConical size={20} />, name: 'Laboratory' },
+    { icon: <Ambulance size={20} />, name: 'Emergency Services' },
+  ];
   return (
     <div className="pt-24">
       {/* Hero Section */}
@@ -134,7 +140,7 @@ const ServicesPage: React.FC = () => {
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Comprehensive Healthcare Solutions</h2>
             <p className="text-gray-700 mb-6">
-              At HealthPlus Hospital, we offer a wide range of medical services designed to address all your healthcare needs. Our dedicated teams of specialists work together to provide integrated care using the latest medical advancements.
+              At Tilottama Hospital, we offer a wide range of medical services designed to address all your healthcare needs. Our dedicated teams of specialists work together to provide integrated care using the latest medical advancements.
             </p>
             <p className="text-gray-700">
               Whether you need routine preventive care, specialized treatment, or emergency services, our goal is to deliver exceptional medical care with compassion and expertise.
@@ -186,7 +192,7 @@ const ServicesPage: React.FC = () => {
                 </ul>
                 <div className="flex items-center text-primary-600 font-bold">
                   <Phone size={20} className="mr-2" />
-                  Emergency: (123) 456-7999
+                  Emergency: 977 9857025855
                 </div>
               </div>
               
@@ -201,6 +207,28 @@ const ServicesPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Diagnostic Services */}
+      <section className="py-16 bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Diagnostic Services</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+            Our diagnostic services utilize the latest technology and techniques to provide accurate and timely results.</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {diagnosticServices.map((service, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-soft text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-50 text-primary-600 mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="font-semibold">{service.name}</h3>
+              </div>
+            ))}
+          </div>
+          </div>
+          </section>
       
       {/* Additional Services */}
       <section className="py-16 bg-gray-50">
@@ -212,7 +240,7 @@ const ServicesPage: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {additionalServices.map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-soft text-center">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-50 text-primary-600 mb-4">
@@ -234,63 +262,7 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
       
-      {/* Patient Resources */}
-      <section className="py-16 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Patient Resources</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              We're committed to providing you with the information and support you need for your healthcare journey.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-primary-50 p-8 rounded-lg animate-fade-in">
-              <h3 className="text-xl font-semibold mb-4 text-primary-700">Patient Education</h3>
-              <p className="text-gray-700 mb-4">
-                Access educational materials about common medical conditions, treatments, and preventive care to help you make informed decisions about your health.
-              </p>
-              <a href="#" className="text-primary-600 font-medium hover:text-primary-700">
-                View Resources →
-              </a>
-            </div>
-            
-            <div className="bg-secondary-50 p-8 rounded-lg animate-fade-in">
-              <h3 className="text-xl font-semibold mb-4 text-secondary-700">Insurance & Billing</h3>
-              <p className="text-gray-700 mb-4">
-                Get information about accepted insurance plans, billing procedures, financial assistance options, and payment plans.
-              </p>
-              <a href="#" className="text-secondary-600 font-medium hover:text-secondary-700">
-                Learn More →
-              </a>
-            </div>
-            
-            <div className="bg-accent-50 p-8 rounded-lg animate-fade-in">
-              <h3 className="text-xl font-semibold mb-4 text-accent-700">Visitor Information</h3>
-              <p className="text-gray-700 mb-4">
-                Find details about visiting hours, parking, accommodation options, and amenities available at our hospital.
-              </p>
-              <a href="#" className="text-accent-600 font-medium hover:text-accent-700">
-                Visitor Guide →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="py-16 bg-primary-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Schedule an Appointment?</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-8">
-            Our team is ready to provide you with exceptional care tailored to your specific needs.
-          </p>
-          <Link to="/contact" className="btn bg-white text-primary-600 hover:bg-gray-100">
-            <Calendar size={18} className="mr-2" />
-            Book Your Appointment Today
-          </Link>
-        </div>
-      </section>
+    
     </div>
   );
 };
